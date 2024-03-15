@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Activity</title>
+    <style>
+
+        body{
+            background-image: url("ban2.jpg");
+            text-align: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .container {
+            
+            height: 650px;
+            
+            
+            
+            background-color: white;
+            border-radius: 20px;
+        }
+
+        select,
+        option,
+        label {
+            width: 400px;
+            height: 50px;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 8px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .sub-container {
+            text-align: center;
+            justify-content: center;
+            display: flex;
+
+        }
+
+        table {
+            border: 1px solid gray;
+            border-collapse: collapse;
+            margin: 100px 0;
+        }
+
+        td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            text-align: center;
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="text-decoration: underline;">Monthly Activities</h1>
+        <div class="subjects">
+            <label for="sub">select Subjects to see your activity</label>
+            <select id="sub" name="sub" onchange="selectValue()">
+                <option value="english">English</option>
+                <option value="mathametics">Mathametics</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="physics">Physics</option>
+                <option value="biology">Biology</option>
+            </select>
+        </div>
+        <div class="sub-container">
+            <div id="table"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        function selectValue() {  
+            var selectedValue = document.getElementById('sub').value;
+            if (selectedValue == "mathametics"){
+            
+                function matTable() {
+            var actArr = [
+                { id: 1, activity: "maths" },
+                { id: 2, activity: "Create project file which contains 12-19 tables" },
+                { id: 3, activity: "Create project file which contains 12-19 tables" }
+            ]
+
+            var html = "<table>"
+            
+
+            for (let i = 0; i < actArr.length; i++) {
+                html += '<tr>';
+                html += '<td>' + actArr[i].id + '</td>';
+                html += '<td>' + actArr[i].activity + '</td>';
+                html += '</tr>';
+            }
+            document.getElementById("table").innerHTML = html
+
+
+        }
+        matTable();
+
+            }
+
+            else if(selectedValue=='chemistry'){
+                function cheTable() {
+            var actArr = [
+                { id: 1, activity: "chemsitry" },
+                { id: 2, activity: "Create project file which contains 12-19 tables" },
+                { id: 3, activity: "Create project file which contains 12-19 tables" }
+            ]
+
+            var html = "<table>"
+            
+
+            for (let i = 0; i < actArr.length; i++) {
+                html += '<tr>';
+                html += '<td>' + actArr[i].id + '</td>';
+                html += '<td>' + actArr[i].activity + '</td>';
+                html += '</tr>';
+            }
+            document.getElementById("table").innerHTML = html
+
+
+        }
+        cheTable();
+        }
+
+        else if(selectedValue == 'english'){
+            function engTable() {
+            var actArr = [
+                { id: 1, activity: "english" },
+                { id: 2, activity: "Create project file which contains 12-19 tables" },
+                { id: 3, activity: "Create project file which contains 12-19 tables" }
+            ]
+
+            var html = "<table>"
+            
+
+            for (let i = 0; i < actArr.length; i++) {
+                html += '<tr>';
+                html += '<td>' + actArr[i].id + '</td>';
+                html += '<td>' + actArr[i].activity + '</td>';
+                html += '</tr>';
+            }
+            document.getElementById("table").innerHTML = html
+
+
+        }
+        engTable();
+        }
+
+        else if(selectedValue == 'physics'){
+            function phyTable() {
+            var actArr = [
+                { id: 1, activity: "Create project file which contains 12-19 tables" },
+                { id: 2, activity: "Create project file which contains 12-19 tables" },
+                { id: 3, activity: "Create project file which contains 12-19 tables" }
+            ]
+
+            var html = "<table>"
+            
+
+            for (let i = 0; i < actArr.length; i++) {
+                html += '<tr>';
+                html += '<td>' + actArr[i].id + '</td>';
+                html += '<td>' + actArr[i].activity + '</td>';
+                html += '</tr>';
+            }
+            document.getElementById("table").innerHTML = html
+
+
+        }
+        phyTable();
+
+        }
+
+        else if(selectedValue == 'biology'){
+            function bioTable(){
+                var arr=[
+                    {id:1, activity:"all students recoords have been submited"},
+                    {id:2,activity:"conducted technical quiz"}
+                ]
+
+                var html='<table>'
+                
+                for(let i=0;i<arr.length;i++){
+                    html+='<tr>';
+                    html+='<td>'+arr[i].id+'</td>'
+                    html+='<td>'+arr[i].activity+'</td>'
+                    html+='</tr>';
+
+                }
+                document.getElementById('table').innerHTML = html
+            }
+
+            bioTable();
+        }
+
+
+        }
+        
+
+
+
+
+    </script>
+</body>
+
+</html>
